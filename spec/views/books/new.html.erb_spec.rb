@@ -16,8 +16,6 @@ RSpec.describe "books/new", type: :view do
 
       assert_select "input#book_name[name=?]", "book[name]"
 
-      assert_select "input#book_isbn[name=?]", "book[isbn]"
-
       assert_select "input#book_price[name=?]", "book[price]"
     end
   end
