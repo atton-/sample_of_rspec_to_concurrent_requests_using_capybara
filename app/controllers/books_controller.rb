@@ -35,6 +35,8 @@ class BooksController < ApplicationController
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
+  rescue ActiveRecord::RecordNotUnique => e
+    @book.save  # Force Retry
   end
 
   # PATCH/PUT /books/1
